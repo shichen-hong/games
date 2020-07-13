@@ -1,24 +1,27 @@
-#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+#include <vector>
+#include "main.hpp"
 
-int main()
+int main(int argc, char* argv[])
 {
-    sf::RenderWindow window(sf::VideoMode(100, 100), "SFML works!");
-    sf::CircleShape shape(50.f);
-    shape.setFillColor(sf::Color::Green);
+    std::vector<sf::VideoMode> window_modes = sf::VideoMode::getFullscreenModes();
+    sf::Uint32 style = sf::Style::Default;
+    // sf::Uint32 style = sf::Style::Fullscreen;
+    sf::Window window(sf::VideoMode(400, 300), "My Game", style);
+    window.setMouseCursorVisible(false);
 
-    while (window.isOpen())
+
+    while(window.isOpen())
     {
-        sf::Event event;
-        while (window.pollEvent(event))
+        sf::Event event_1;
+        while (window.pollEvent(event_1))
         {
-            if (event.type == sf::Event::Closed)
-                window.close();
+            
         }
-
-        window.clear();
-        window.draw(shape);
-        window.display();
     }
 
+    sf::sleep(sf::seconds(5));
     return 0;
 }
+
+

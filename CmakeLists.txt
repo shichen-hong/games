@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.10)
+set(This myGame)
+
+project(${This} C CXX)
+
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+enable_testing()
+
+set(Sources 
+    "myGame/main.cpp"
+)
+
+add_executable(${This} ${Sources})
+
+set(SFML_DIR "C:/Users/shichen.hong/Downloads/SFML_dynamic/lib/cmake/SFML")
+find_package(SFML 2.5 COMPONENTS graphics audio window system REQUIRED)
+
+target_link_libraries(${This} sfml-graphics sfml-audio sfml-window sfml-system)
