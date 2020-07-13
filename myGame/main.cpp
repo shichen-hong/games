@@ -1,6 +1,5 @@
-#include <SFML/Window.hpp>
-#include <vector>
 #include "main.hpp"
+
 
 int main(int argc, char* argv[])
 {
@@ -16,7 +15,7 @@ int main(int argc, char* argv[])
         sf::Event event_1;
         while (window.pollEvent(event_1))
         {
-            
+
         }
     }
 
