@@ -16,7 +16,7 @@ set(Sources
 add_executable(${This} ${Sources})
 
 # FOR STATIC LINKIND
-set(SFML_DIR "C:/Users/shichen.hong/Downloads/SFML/lib/cmake/SFML")
+set(SFML_DIR "./SFML/lib/cmake/SFML")
 set(SFML_STATIC_LIBRARIES TRUE)
 find_package(SFML 2 COMPONENTS graphics audio window system REQUIRED)
 
